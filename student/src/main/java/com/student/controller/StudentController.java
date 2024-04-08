@@ -27,7 +27,7 @@ import com.student.service.StudentServiceImp;
 	    maxAge = 3600L,
 	    exposedHeaders = "Access-Control-Allow-Origin"
 	)
-
+//gayathri
 public class StudentController {
    
     @Autowired

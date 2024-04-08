@@ -37,7 +37,7 @@ public class AttendanceServiceImp implements AttendanceService{
 	public Attendance update(Attendance attendance) {
 		if(!attendanceRepository.findById(attendance.getId()).isPresent())
 		{
-			throw new ResourceNotFoundException("Attendance not found for Id");
+			throw new ResourceNotFoundException("Attendance not found for Id"+ attendance.getId());
 
 		}
 		return attendanceRepository.save(attendance);

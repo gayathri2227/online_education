@@ -42,13 +42,18 @@ public class AttendanceController {
     }
 
     @PutMapping("/update")
-    public Attendance update(@RequestBody Attendance attendance) {
+    public Attendance update1(@RequestBody Attendance attendance) {
         return attendanceServiceImp.update(attendance);
     }
     
-    @GetMapping("/getStaus")
+    @GetMapping("/getStatus")
     public List<String> getStatus()
     {
     	return attendanceServiceImp.getStatus(true);
     }
+
+	public Attendance update(Attendance attendance) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
