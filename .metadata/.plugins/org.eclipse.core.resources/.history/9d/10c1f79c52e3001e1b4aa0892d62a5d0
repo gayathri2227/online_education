@@ -1,0 +1,15 @@
+package com.course.Dao;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.course.dto.ExamDto;
+
+
+
+public interface ExamDao {
+	
+	@GetMapping("get/{id}")
+	public ExamDto searchByExamId(@PathVariable("id") long id);
+
+}
