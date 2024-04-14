@@ -11,7 +11,7 @@ public class StudentApplicationTests {
  
 	@Test
 	void contextLoads() {
-		 assertTrue(true);
+		
 	}
  
 }
