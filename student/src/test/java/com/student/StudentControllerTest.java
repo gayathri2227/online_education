@@ -16,7 +16,7 @@ import com.student.controller.StudentController;
 import com.student.entity.Student;
 import com.student.service.StudentServiceImp;
 
-public class StudentControllerTest {
+ class StudentControllerTest {
 
     @Mock
     private StudentServiceImp serviceImp;
