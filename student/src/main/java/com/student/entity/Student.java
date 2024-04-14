@@ -188,6 +188,13 @@ public class Student {
 	public void setScore(int score) {
 		this.score = score;
 	}
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", dateOfBrith=" + dateOfBrith + ", contactNum=" + contactNum + ", password=" + password + ", email="
+				+ email + ", attendances=" + attendances + ", courseId=" + courseId + ", score=" + score + ", address="
+				+ address + "]";
+	}
 	
 	
 
