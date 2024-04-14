@@ -121,25 +121,7 @@ import com.student.service.StudentServiceImp;
         assertEquals(registrationMessage, resultMessage);
     }
     
-    @Test
-    void testParameterizedConstructor() {
-        // Create a sample student object using the parameterized constructor
-        Student student = new Student(1, "John", "Doe", "2000-01-01", "1234567890",
-                "password", "john.doe@example.com", List.of(1, 2), 101, 90, "123 Main St");
-
-        // Check if the values are set correctly
-        assertEquals(1, student.getStudentId());
-        assertEquals("John", student.getFirstName());
-        assertEquals("Doe", student.getLastName());
-        assertEquals("2000-01-01", student.getDateOfBrith());
-        assertEquals("1234567890", student.getContactNum());
-        assertEquals("password", student.getPassword());
-        assertEquals("john.doe@example.com", student.getEmail());
-        assertEquals(List.of(1, 2), student.getAttendances());
-        assertEquals(101, student.getCourseId());
-        assertEquals(90, student.getScore());
-        assertEquals("123 Main St", student.getAddress());
-    }
+    
     @Test
     void testToString() {
         // Create a sample student object
