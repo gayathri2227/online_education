@@ -26,16 +26,15 @@ public class StudentServiceImp implements StudentService {
 		return studentRepository.save(student);
 	}
 	
-	public Student searchById(long id)
-	{
-	    Student student = studentRepository.findByStudentId(id).get();
-	    
-	    if(student==null)
-	    {
-	    	throw new ResourceNotFoundException("Student not found for Id"+id);
-	    }
-	    return student;
-	}
+	public Student searchById(long id) {
+    Optional<Student> optionalStudent = studentRepository.findByStudentId(id);
+    
+    if (optionalStudent.isEmpty()) {
+        throw new ResourceNotFoundException("Student not found for Id" + id);
+    }
+    
+    return optionalStudent.get();
+}
 
 	
 	
