@@ -30,7 +30,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testSaveDetails() {
+    void testSaveDetails() {
         Student student = new Student();
         when(serviceImp.saveDetails(student)).thenReturn(student);
 
@@ -40,7 +40,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testUpdate() {
+    void testUpdate() {
         Student student = new Student();
         when(serviceImp.update(student)).thenReturn(student);
 
@@ -50,7 +50,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testSearchByStudent() {
+    void testSearchByStudent() {
         long id = 1;
         Student student = new Student();
         when(serviceImp.searchById(id)).thenReturn(student);
@@ -61,7 +61,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testDeleteStudent() {
+    void testDeleteStudent() {
         long id = 1;
         String deletionMessage = "Deleted successfully";
         when(serviceImp.delete(id)).thenReturn(deletionMessage);
@@ -71,7 +71,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testGetAll() {
+     void testGetAll() {
         List<Student> students = new ArrayList<>();
         when(serviceImp.getAll()).thenReturn(students);
 
@@ -81,7 +81,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testGetAllPass() {
+    void testGetAllPass() {
         List<Student> students = new ArrayList<>();
         when(serviceImp.getAllPass()).thenReturn(students);
 
@@ -91,7 +91,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testGetAllFail() {
+    void testGetAllFail() {
         List<Student> students = new ArrayList<>();
         when(serviceImp.getAllFail()).thenReturn(students);
 
@@ -101,7 +101,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testGetScore() {
+     void testGetScore() {
         long id = 1;
         int score = 90;
         when(serviceImp.getScore(id)).thenReturn(score);
@@ -111,7 +111,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testRegisterForCourse() {
+    void testRegisterForCourse() {
         long studentId = 1;
         long courseId = 1;
         String registrationMessage = "Registered successfully";
@@ -120,4 +120,48 @@ public class StudentControllerTest {
         String resultMessage = studentController.registerForCourse(studentId, courseId);
         assertEquals(registrationMessage, resultMessage);
     }
+    
+    @Test
+    void testParameterizedConstructor() {
+        // Create a sample student object using the parameterized constructor
+        Student student = new Student(1, "John", "Doe", "2000-01-01", "1234567890",
+                "password", "john.doe@example.com", List.of(1, 2), 101, 90, "123 Main St");
+
+        // Check if the values are set correctly
+        assertEquals(1, student.getStudentId());
+        assertEquals("John", student.getFirstName());
+        assertEquals("Doe", student.getLastName());
+        assertEquals("2000-01-01", student.getDateOfBrith());
+        assertEquals("1234567890", student.getContactNum());
+        assertEquals("password", student.getPassword());
+        assertEquals("john.doe@example.com", student.getEmail());
+        assertEquals(List.of(1, 2), student.getAttendances());
+        assertEquals(101, student.getCourseId());
+        assertEquals(90, student.getScore());
+        assertEquals("123 Main St", student.getAddress());
+    }
+    @Test
+    void testToString() {
+        // Create a sample student object
+        Student student = new Student();
+        student.setStudentId(1);
+        student.setFirstName("John");
+        student.setLastName("Doe");
+        student.setDateOfBrith("2000-01-01");
+        student.setContactNum("1234567890");
+        student.setEmail("john.doe@example.com");
+        student.setAddress("123 Main St");
+        student.setPassword("password");
+        student.setScore(90);
+
+        // Define the expected string representation
+        String expectedToString = "Student [studentId=1, firstName=John, lastName=Doe, dateOfBrith=2000-01-01, " +
+                "contactNum=1234567890, password=password, email=john.doe@example.com, attendances=null, " +
+                "courseId=0, score=90, address=123 Main St]";
+
+        // Check if the toString method produces the expected output
+        assertEquals(expectedToString, student.toString());
+    }
 }
+
+
