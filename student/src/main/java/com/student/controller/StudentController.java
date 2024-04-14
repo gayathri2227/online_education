@@ -78,4 +78,3 @@ public class StudentController {
         return serviceImp.registerForCourse(studentId, courseId);
     }
 }
-
