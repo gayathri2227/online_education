@@ -159,7 +159,6 @@ public class Student {
 		this.courseId = courseId;
 		this.score = score;
 		this.address = address;
-		
 	}
 
 
@@ -202,3 +201,4 @@ public class Student {
 	
 
 }
+
