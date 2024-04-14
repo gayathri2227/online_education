@@ -1,9 +1,6 @@
 package com.student.service;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,7 +52,7 @@ public class StudentServiceImp implements StudentService {
 	        return studentRepository.saveAndFlush(student);
 	    }
 	public List<Student> getAll() {
-		// TODO Auto-generated method stub
+		
 		return studentRepository.findAll();
 	}
 	
