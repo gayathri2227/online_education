@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
+
 import com.student.dao.CourseDao;
 import com.student.dto.CourseDto;
 import com.student.entity.Student;
@@ -26,18 +26,17 @@ public class StudentServiceImp implements StudentService {
 		return studentRepository.save(student);
 	}
 	
-	public Student searchById(long id) {
-    Optional<Student> optionalStudent = studentRepository.findByStudentId(id);
+	public Student searchById(long id)
+	{
+	    Student student = studentRepository.findByStudentId(id).get();
+	    
+	    if(student==null)
+	    {
+	    	throw new ResourceNotFoundException("Student not found for Id"+id);
+	    }
+	    return student;
+	}
     
-    if (optionalStudent.isEmpty()) {
-        throw new ResourceNotFoundException("Student not found for Id" + id);
-    }
-    
-    return optionalStudent.get();
-}
-
-	
-	
 	 @Override
 	    public String delete(long id) {
 	        Student student = searchById(id);
