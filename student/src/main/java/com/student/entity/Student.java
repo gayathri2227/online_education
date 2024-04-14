@@ -156,15 +156,12 @@ public class Student {
 		this.password = password;
 		this.email = email;
 		this.attendances = attendances;
-		this.courseId=courseId;
-		this.score=score;
-		this.address=address;
 		
 	}
 
 
 	public Student() {
-		
+	
 	}
 
 
@@ -189,6 +186,8 @@ public class Student {
 	public void setScore(int score) {
 		this.score = score;
 	}
+
+
 	@Override
 	public String toString() {
 		return "Student [studentId=" + studentId + ", firstName=" + firstName + ", lastName=" + lastName
