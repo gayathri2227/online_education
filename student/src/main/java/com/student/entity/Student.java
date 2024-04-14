@@ -156,9 +156,7 @@ public class Student {
 		this.password = password;
 		this.email = email;
 		this.attendances = attendances;
-		this.courseId = courseId;
-		this.score = score;
-		this.address = address;
+		
 	}
 
 
