@@ -3,7 +3,6 @@ package com.student.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,16 +29,16 @@ public class StudentServiceImp implements StudentService {
 		return studentRepository.save(student);
 	}
 	
-	public Student searchById(long id) {
-    Optional<Student> optionalStudent = studentRepository.findByStudentId(id);
-    
-    if (optionalStudent.isEmpty()) {
-        throw new ResourceNotFoundException("Student not found for Id" + id);
-    }
-    
-    return optionalStudent.get();
-}
-
+	public Student searchById(long id)
+	{
+	    Student student = studentRepository.findByStudentId(id).get();
+	    
+	    if(student==null)
+	    {
+	    	throw new ResourceNotFoundException("Student not found for Id"+id);
+	    }
+	    return student;
+	}
 
 	
 	
@@ -56,7 +55,7 @@ public class StudentServiceImp implements StudentService {
 	        return studentRepository.saveAndFlush(student);
 	    }
 	public List<Student> getAll() {
-		// TODO Auto-generated method stub
+		
 		return studentRepository.findAll();
 	}
 	
@@ -117,3 +116,4 @@ public class StudentServiceImp implements StudentService {
 	
 
 }
+
