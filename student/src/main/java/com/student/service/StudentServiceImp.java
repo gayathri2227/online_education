@@ -55,7 +55,7 @@ public class StudentServiceImp implements StudentService {
 	        return studentRepository.saveAndFlush(student);
 	    }
 	public List<Student> getAll() {
-		// TODO Auto-generated method stub
+		
 		return studentRepository.findAll();
 	}
 	
